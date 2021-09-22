@@ -1,5 +1,6 @@
 package com.example.higherlowerinluppg
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -75,12 +76,14 @@ class MainActivity : AppCompatActivity() {
             currentScore++
             textView.text = currentScore.toString()
         } else {
-            currentScore--
-            textView.text = currentScore.toString()
+            newActivity()
         }
     }
 
-
+    fun newActivity() {
+        val intent = Intent(this, finalScoreActivity::class.java)
+        startActivity(intent)
+    }
 
 
 }
