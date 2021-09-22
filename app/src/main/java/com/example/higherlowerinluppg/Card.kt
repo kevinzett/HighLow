@@ -1,4 +1,7 @@
 package com.example.higherlowerinluppg
 
-class Card {
+import android.widget.ImageView
+
+class Card(var value: Int, var image: ImageView) {
+
 }
