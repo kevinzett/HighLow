@@ -23,6 +23,7 @@
         android:layout_width="184dp"
         android:layout_height="66dp"
         android:background="#F6825D"
+        android:onClick="onHigher"
         android:text="High"
         android:textColor="#1C1B0E"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,6 +38,7 @@
         android:layout_width="184dp"
         android:layout_height="66dp"
         android:background="#F6825D"
+        android:onClick="onLower"
         android:text="Low"
         android:textColor="#1C1B0E"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,4 +47,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.669" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.836" />
 </androidx.constraintlayout.widget.ConstraintLayout>
