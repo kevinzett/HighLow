@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HigherLower">
         <activity
+            android:name=".ScoreActivity"
+            android:exported="true" />
+        <activity
             android:name=".finalScoreActivity"
             android:exported="true" />
         <activity

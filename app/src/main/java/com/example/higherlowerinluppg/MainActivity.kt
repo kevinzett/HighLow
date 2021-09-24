@@ -12,44 +12,28 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
     lateinit var imageView: ImageView
     lateinit var textView: TextView
+    var cardList = CardList()
 
-    val cardList = listOf<Card>(Card(2, R.drawable.two),
-        Card(3, R.drawable.three),
-        Card(4, R.drawable.four),
-        Card(5, R.drawable.five),
-        Card(6, R.drawable.six),
-        Card(7, R.drawable.seven),
-        Card(8, R.drawable.eigth),
-        Card(9, R.drawable.nine),
-        Card(10, R.drawable.ten),
-        Card(11, R.drawable.knekt),
-        Card(12, R.drawable.dam),
-        Card(13, R.drawable.kung),
-        Card(1, R.drawable.ess))
 
-    var randomCard = cardList.random()
+    var randomCard = cardList.cardList.random()
     var cardValue = randomCard.value
     var cardImage = randomCard.image
     var currentScore = 0
-    var newCardValue = randomCard.value
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         imageView = findViewById(R.id.imageView)
         textView = findViewById(R.id.textView)
 
 
         newCard()
 
-        //val currentCard =
-
-
-
     }
 
     fun newCard(){
-        randomCard = cardList.random()
+        randomCard = cardList.cardList.random()
         cardValue = randomCard.value
         cardImage = randomCard.image
         imageView.setImageResource(cardImage)
@@ -59,13 +43,11 @@ class MainActivity : AppCompatActivity() {
     fun onHigher(view: View){
         val newCardValue = randomCard.value
         newCard()
-        //newCardValue = randomCard.value
         if(cardValue >= newCardValue) {
             currentScore++
             textView.text = currentScore.toString()
         } else {
-            currentScore--
-            textView.text = currentScore.toString()
+            newActivity()
         }
     }
 
@@ -81,7 +63,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun newActivity() {
-        val intent = Intent(this, finalScoreActivity::class.java)
+        val intent = Intent(this, ScoreActivity::class.java)
+        intent.putExtra("currentscore", currentScore)
         startActivity(intent)
     }
 

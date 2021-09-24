@@ -6,10 +6,5 @@ import java.util.*
 
 class Card(var value: Int, var image: Int) {
 
-
 }
 
-    fun onHigh(view: View) {
-
-
-}
