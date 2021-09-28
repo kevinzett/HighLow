@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/button_custom.xml" value="0.25885416666666666" />
+        <entry key="app/src/main/res/layout/activity_card_recycle.xml" value="0.15942028985507245" />
         <entry key="app/src/main/res/layout/activity_final_score.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_score.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/item_list.xml" value="0.24270833333333333" />
       </map>
     </option>
   </component>

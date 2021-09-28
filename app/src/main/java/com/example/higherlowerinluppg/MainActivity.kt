@@ -3,6 +3,7 @@ package com.example.higherlowerinluppg
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var imageView: ImageView
     lateinit var textView: TextView
     var cardList = CardList()
+    val listOfCorrectCards = mutableListOf<Card>()
 
 
     var randomCard = cardList.cardList.random()
@@ -32,6 +34,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+
+
     fun newCard(){
         randomCard = cardList.cardList.random()
         cardValue = randomCard.value
@@ -45,7 +50,9 @@ class MainActivity : AppCompatActivity() {
         newCard()
         if(cardValue >= newCardValue) {
             currentScore++
+            listOfCorrectCards.add(randomCard)
             textView.text = currentScore.toString()
+            Log.d("!!!", "${listOfCorrectCards.size}")
         } else {
             newActivity()
         }
@@ -56,6 +63,7 @@ class MainActivity : AppCompatActivity() {
         newCard()
         if(cardValue <= newCardValue) {
             currentScore++
+            listOfCorrectCards.add(randomCard)
             textView.text = currentScore.toString()
         } else {
             newActivity()
