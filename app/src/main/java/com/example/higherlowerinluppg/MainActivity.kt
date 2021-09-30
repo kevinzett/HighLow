@@ -1,6 +1,7 @@
 package com.example.higherlowerinluppg
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var imageView: ImageView
     lateinit var textView: TextView
     var cardList = CardList()
+    lateinit var mediaPlayer: MediaPlayer
 
 
     var randomCard = cardList.cardList.random()
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         imageView = findViewById(R.id.imageView)
         textView = findViewById(R.id.textView)
+        mediaPlayer = MediaPlayer.create(this, R.raw.canopen_1)
 
 
         newCard()
@@ -53,6 +56,7 @@ class MainActivity : AppCompatActivity() {
             DataManager.listOfCorrectCards.add(randomCard)
             textView.text = currentScore.toString()
         } else {
+            mediaPlayer.start()
             newActivity()
         }
     }
@@ -66,6 +70,7 @@ class MainActivity : AppCompatActivity() {
             DataManager.listOfCorrectCards.add(randomCard)
             textView.text = currentScore.toString()
         } else {
+            mediaPlayer.start()
             newActivity()
         }
     }
@@ -75,6 +80,5 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("currentscore", currentScore)
         startActivity(intent)
     }
-
 
 }
