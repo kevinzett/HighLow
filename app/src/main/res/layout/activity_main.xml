@@ -48,6 +48,18 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.669" />
 
+
+    <Chronometer
+        android:id="@+id/timeView"
+        android:layout_width="83dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="292dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="26"
+        />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
