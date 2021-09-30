@@ -24,5 +24,10 @@ class ScoreActivity : AppCompatActivity() {
         super.onRestart()
     }
 
+    fun onCorrectCards(view: View) {
+        val intent = Intent(this, CardRecycleActivity::class.java)
+        startActivity(intent)
+    }
+
 
 }

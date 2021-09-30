@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var imageView: ImageView
     lateinit var textView: TextView
     var cardList = CardList()
-    val listOfCorrectCards = mutableListOf<Card>()
 
 
     var randomCard = cardList.cardList.random()
@@ -46,24 +45,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onHigher(view: View){
+
         val newCardValue = randomCard.value
         newCard()
         if(cardValue >= newCardValue) {
             currentScore++
-            listOfCorrectCards.add(randomCard)
+            DataManager.listOfCorrectCards.add(randomCard)
             textView.text = currentScore.toString()
-            Log.d("!!!", "${listOfCorrectCards.size}")
         } else {
             newActivity()
         }
     }
 
     fun onLower(view: View) {
+
         val newCardValue = randomCard.value
         newCard()
         if(cardValue <= newCardValue) {
             currentScore++
-            listOfCorrectCards.add(randomCard)
+            DataManager.listOfCorrectCards.add(randomCard)
             textView.text = currentScore.toString()
         } else {
             newActivity()
