@@ -14,10 +14,8 @@ class CardRecycleActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        //skapa en adapter från vår adapter-klass, skicka med vår lista
         val adapter = CardRecycleAdapter(this, DataManager.listOfCorrectCards)
 
-        // koppla ihop vår adapter mec recycleview
         recyclerView.adapter = adapter
     }
 }

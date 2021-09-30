@@ -21,6 +21,7 @@ class ScoreActivity : AppCompatActivity() {
     fun onRestart(view: View) {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+        DataManager.listOfCorrectCards.clear()
         super.onRestart()
     }
 
